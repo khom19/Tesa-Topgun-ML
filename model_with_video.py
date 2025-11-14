@@ -152,8 +152,8 @@ class SimpleTracker:
         
         return assigned_ids, cal_distant, is_predicted_dict
 
-obj_model = YOLO(r"C:\Users\khom2\Desktop\tesa\main_best.pt")
-cap = cv2.VideoCapture(r"C:\Users\khom2\Desktop\tesa\P3_VIDEO.mp4")
+obj_model = YOLO(r"C:\Users\khom2\Desktop\Tesa-Topgun\main_best.pt")
+cap = cv2.VideoCapture(r"C:\Users\khom2\Desktop\Tesa-Topgun\vid\P3_VIDEO.mp4")
 img_width, img_height = 1920, 1080
 
 load_dotenv()
@@ -178,7 +178,7 @@ if not cap.isOpened():
     exit()
 
 # โหลด CSV data
-model = joblib.load(r"C:\Users\khom2\Desktop\tesa\model.pkl")
+model = joblib.load(r"C:\Users\khom2\Desktop\Tesa-Topgun\model.pkl")
 
 frame_count = 0
 send_interval = 30
@@ -188,7 +188,7 @@ frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-output_path = r"C:\Users\khom2\Desktop\tesa\output_video.mp4"
+output_path = r"C:\Users\khom2\Desktop\Tesa-Topgun\vid\output_video.mp4"
 out = cv2.VideoWriter(output_path, fourcc, fps, (frame_width, frame_height))
 
 while True:
